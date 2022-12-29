@@ -1,66 +1,93 @@
 ---
-name: Marie
-surname: Curie
-position: "Professor"
-address: "School of Physics & Chemistry, École Normale Supérieure"
-phone: +1 22 3333 4444
-www: mariecurie.com
-email: "Marie.Curie@ens.fr"
-twitter: mariecurie
-github: mariecurie
-linkedin: mariecurie
+name: Bryan Antony
+surname: Quispe Ramos
+position: Bachiller en Ingeniería Ambiental
+address: Lima, Perú
+phone: +51 915228000
+profilepic: bryan2.png
+email: bryan1qr@gmail.com
+headcolor: 17202A
+github: Bryan1qr
+linkedin: "bryan-antony-quispe-ramos-378867171"
 date: "`r format(Sys.time(), '%B %Y')`"
-output: 
+always_allow_html: true
+output:
   vitae::awesomecv:
     page_total: true
+    keep_tex: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
+library(tidyverse)
+library(emojifont)
+library(fontawesome)
+library(kableExtra)
+library(huxtable)
+library(gridExtra)
 ```
 
-# Some stuff about me
+\paragraphstyle{Bachiller en Ingeniería Ambiental con conocimiento en Sistemas de Información Geográfica, Análisis de Datos Estadísticos, monitoreos ambientales, Análisis Geoespaciales usando lenguaje R. Tengo interés por el control de la contaminación, Investigación, Desarrollo e Innovación, así como cualquier actividad que que se desarrolle con responsabilidad ambiental.}
 
- * I poisoned myself doing research.
- * I was the first woman to win a Nobel prize
- * I was the first person and only woman to win a Nobel prize in two different sciences.
-
-# Education
-
-```{r}
-library(tibble)
+# Experiencia profesional
+```{r experience}
 tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
-  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
-  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
-) %>% 
-  detailed_entries(Degree, Year, Institution, Where)
+  ~ study, ~ university, ~ loc, ~ dates, ~ details,
+    "Consorcio Supervisor Ollachea", "Asistente técnico","Puno, Perú", "mayo/2022-diciembre/222", "Apoyo en la realización de monitoreos de la calidad de aire, agua, ruido, realización de replanteos, verificación de trazos y niveles topográficos durante la ejecución de una obra vial.",
+    "Lenvir S.A.C.", "Asistente técnico","Tacna, Perú", "agosto/2021 - abril/2022", "Apoyo en la elaboración de Instrumentos de Gestión Ambiental (FITSA, FTA y DIA) en los capítulos de linea base física, biológica y socioeconómica. Elaboración de mapas y planos.",
+  "Grupo Adrikap S.A.C.", "Asistente técnico","Tacna, Perú", "marzo/2021 - julio/2021", "Apoyo en la elaboración de Instrumentos de Gestión Ambiental (DIA, PMRRSS ITSs), monitoreos ambientales de la calidad de aire, ruido, análisis e interpretación de datos estadísticos") |> 
+  detailed_entries(study, dates, university, loc, details, .protect=FALSE)
 ```
 
-# Nobel Prizes
-
-```{r}
+# Educación
+```{r education}
 tribble(
-  ~Year, ~Type, ~Desc,
-  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
-  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>% 
-  brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
-    Year, 
-    Desc
-  )
+  ~ study, ~ university, ~ loc, ~ dates, ~ details,
+    "Bachiller en Ingeniería Ambiental", "Universidad Nacional Jorge Basadre Grohmann","Tacna, Perú", "abril/2015-diciembre/2019", "Bachiller en Ciencias con mención en Ingeniería Ambiental, quinto superior.",
+    "Técnico en Ofimática", "Instituto de Informática y Telecomunicaciones","Tacna, Perú", "marzo/2019 - junio/2019", "Uso de Microsoft Office a nivel avanzado, Instalación y mantenimiento de Sistemas Operativos") |> 
+  detailed_entries(study, dates, university, loc, details, .protect=FALSE)
+```
+# Programas
+```{r programs}
+tribble(
+  ~detalles, ~loc, ~nivel, ~curso,
+  "Uso del software Quantum GIS a nivel avanzado", " ", "QGIS", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software ArcGIS a nivel avanzado", " ", "ArcGIS", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software AutoCAD a nivel avanzado", " ", "AutoCAD", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software RStudio a nivel avanzado", " ", "RStudio", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software Microsoft Excel a nivel intermedio", " ", "Microsoft Excel", "■■■■■■■■■■■■■■■■□□□□□□□□",
+  "Uso del software Microsoft Word a nivel intermedio", " ", "Microsoft Word", "■■■■■■■■■■■■■■■■□□□□□□□□",
+  "Uso del software Microsoft PowerPoint a nivel avanzado", " ", "Microsoft PowerPoint", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software Mendeley a nivel intermedio como gestor de referencias bibliográficas", " ", "Mendeley", " ■■■■■■■■■■■■■■■■□□□□□□□□",
+  "Uso del software SASPlanet a nivel avanzado", " ", "SASPlanet", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software Google Earth Pro a nivel avanzado", " ", "Google Earth Pro", "■■■■■■■■■■■■■■■■■■■■■■■■"
+  )|> detailed_entries(detalles, loc, nivel, curso, .protect=FALSE)
 ```
 
-# Publications
+# Cursos
 
-```{r}
-library(dplyr)
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
-
-bibliography_entries("packages.bib") %>%
-  arrange(desc(author$family), issued)
+```{r courses}
+tribble(
+  ~ study, ~ university, ~ loc, ~ dates, ~ details,
+    "Mastergis", "Geoestadística aplicada al medioambiente","Lima, Perú", "mayo/2022-junio/2022", "Curso de especialización en geoestadística usando el software ArcGIS",
+    "Mastergis", "Experto en SIG con QGIS","Lima, Perú", "diciembre/2021 - abril 2022", "Programa profesional del software Quantum GIS.",
+  "Mastergis", "Variabilidad espacial de cultivos a través de ArcGIS y R","Lima, Perú", "febrero/2022 - marzo/2022", "Curso de geoestadística aplicado a cultivos.",
+  "Mastergis", "Experto en SIG con ArcGIS","Lima, Perú", "setiembre/2021 - febrero 2022", "Programa profesional del software ArcGIS.",
+  "Mastergis", "Google Earth Engine con R","Lima, Perú", "diciembre/2021 - enero 2022", "Curso de programación con lenguaje R para tratamiento de datos espaciales de la nube de Google.",
+  "Mastergis", "Analisis Espacial con R","Lima, Perú", "diciembre/2021 - enero 2022", "Curso de Análisis Espacial usando el lenguaje de programación con R.",
+  "CEIA-UNALM", "Análisis de Datos de Calidad de Aire con R y Rstudio","Lima, Perú", "octubre/2021 - noviembre/2022", "Curso de programación con R y Rstudio aplicado a la Calidad de Aire.",
+  "ILCID", "Data Science: Estadística y Análisis de Datos en R","Lima, Perú", "julio/2021-octubre/2021", "Programa de certificación especializado con honores.",
+  "Grupo Adrikap S.A.C.", "Elaboración de Instrumentos de Gestión Ambiental","Tacna, Perú", "setiembre/2021-setiembre/2022", "Curso de elaboración de los diversos capítulos de un IGA.",
+  "Gestión Integral HQSE", "Especialista en AutoCAD","Lima, Perú", "diciembre/2020-junio/2021", "Curso de especialización en AutoCAd en los niveles I, II y III.",
+  "Mastergis", "Estudio de Impacto Ambiental con ArcGIS","Lima, Perú", "mayo/2021-junio/2021", "Curso de Elaboración mapas necesarios en un Estudio de Impacto Ambiental usando el software ArcGIS.",
+  "Gestión Integral HQSE", "Diploma en SIG","Lima, Perú", "agosto2020-enero/2021", "Diploma en Sistemas de Gestión (ISO 14001, ISO 9001 e ISO 45001).",
+  "Gestión Integral HQSE", "Diploma en SSOMA","Lima, Perú", "agosto2020-enero/2021", "Diploma en Seguridad, Salud Ocupacional y Medio Ambiente.") |> 
+  detailed_entries(study, dates, university, loc, details, .protect=FALSE)
 ```
 
+# Referencias laborales
+
+- **Blgo. Jimmy Quinaya Gutierrez**, Especialista Ambiental, cel: 952915546, jimmy.quinaya@unjbg.edu.pe
+
+- **Ing. Carmen Villalba Centeno**, Especialista Ambiental, cel: 962828202
