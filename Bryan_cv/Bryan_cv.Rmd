@@ -59,12 +59,12 @@ tribble(
   "Uso del software ArcGIS a nivel avanzado", " ", "ArcGIS", "■■■■■■■■■■■■■■■■■■■■■■■■",
   "Uso del software AutoCAD a nivel avanzado", " ", "AutoCAD", "■■■■■■■■■■■■■■■■■■■■■■■■",
   "Uso del software RStudio a nivel avanzado", " ", "RStudio", "■■■■■■■■■■■■■■■■■■■■■■■■",
-  "Uso del software Microsoft Excel a nivel intermedio", " ", "Microsoft Excel", "■■■■■■■■■■■■■■■■□□□□□□□□",
-  "Uso del software Microsoft Word a nivel intermedio", " ", "Microsoft Word", "■■■■■■■■■■■■■■■■□□□□□□□□",
-  "Uso del software Microsoft PowerPoint a nivel avanzado", " ", "Microsoft PowerPoint", "■■■■■■■■■■■■■■■■■■■■■■■■",
-  "Uso del software Mendeley a nivel intermedio como gestor de referencias bibliográficas", " ", "Mendeley", " ■■■■■■■■■■■■■■■■□□□□□□□□",
+  "Uso del software Microsoft Excel a nivel intermedio.", " ", "Microsoft Excel", "■■■■■■■■■■■■■■■■□□□□□□□□",
+  "Uso del software Microsoft Word a nivel intermedio.", " ", "Microsoft Word", "■■■■■■■■■■■■■■■■□□□□□□□□",
+  "Uso del software Microsoft PowerPoint a nivel avanzado.", " ", "Microsoft PowerPoint", "■■■■■■■■■■■■■■■■■■■■■■■■",
+  "Uso del software Mendeley a nivel intermedio como gestor de referencias bibliográficas.", " ", "Mendeley", " ■■■■■■■■■■■■■■■■□□□□□□□□",
   "Uso del software SASPlanet a nivel avanzado", " ", "SASPlanet", "■■■■■■■■■■■■■■■■■■■■■■■■",
-  "Uso del software Google Earth Pro a nivel avanzado", " ", "Google Earth Pro", "■■■■■■■■■■■■■■■■■■■■■■■■"
+  "Uso del software Google Earth Pro a nivel avanzado.", " ", "Google Earth Pro", "■■■■■■■■■■■■■■■■■■■■■■■■"
   )|> detailed_entries(detalles, loc, nivel, curso, .protect=FALSE)
 ```
 
