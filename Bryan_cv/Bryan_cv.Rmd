@@ -8,7 +8,7 @@ profilepic: bryan2.png
 email: bryan1qr@gmail.com
 headcolor: 17202A
 github: Bryan1qr
-linkedin: "bryan-antony-quispe-ramos-378867171"
+linkedin: "bryan1qr"
 header-includes:
   \usepackage{float}
   \usepackage{multicol}
