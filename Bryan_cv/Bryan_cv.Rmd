@@ -9,6 +9,9 @@ email: bryan1qr@gmail.com
 headcolor: 17202A
 github: Bryan1qr
 linkedin: "bryan-antony-quispe-ramos-378867171"
+header-includes:
+  \usepackage{float}
+  \usepackage{multicol}
 date: "`r format(Sys.time(), '%B %Y')`"
 always_allow_html: true
 output:
@@ -86,8 +89,32 @@ tribble(
   detailed_entries(study, dates, university, loc, details, .protect=FALSE)
 ```
 
+# Habilidades
+
+## Idiomas
+
+```{r langforeign, results='markup'}
+data.frame(
+  Skill = c("Reading", "Writing", "Listening","Speaking"),
+  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#17202a'), 
+  English = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#17202a')
+) |>
+  kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
+  kable_styling(full_width = F, font_size = 8, latex_options = "HOLD_position") |> 
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "El nivel B2 es considerado como un nivel intermedio que califica al quien lo posee como usuario independiente",
+    escape = F
+  ) |>
+  column_spec(column = 1:3, width = '5cm') #|> 
+  # add_header_above(' ', line = F) |>
+  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+```
+
 # Referencias laborales
 
 - **Blgo. Jimmy Quinaya Gutierrez**, Especialista Ambiental, cel: 952915546, jimmy.quinaya@unjbg.edu.pe
 
 - **Ing. Carmen Villalba Centeno**, Especialista Ambiental, cel: 962828202
+
